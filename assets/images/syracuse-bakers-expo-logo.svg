@@ -1,0 +1,30 @@
+<svg width="360" height="160" viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="whiskBody" x1="50" y1="16" x2="90" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1F6CFF" />
+      <stop offset="1" stop-color="#0B4FB3" />
+    </linearGradient>
+    <linearGradient id="whiskWires" x1="60" y1="26" x2="78" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F97316" />
+      <stop offset="1" stop-color="#FACC15" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="160" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path
+      d="M72.5 28C64.2 28 57.5 34.7 57.5 43V86.5C55 88.6 53.5 92 53.5 96C53.5 102.1 58.4 107 64.5 107C70.6 107 75.5 102.1 75.5 96C75.5 92 74 88.6 71.5 86.5V71C71.5 68.5 73.5 66.5 76 66.5C78.5 66.5 80.5 68.5 80.5 71V91C80.5 97.1 85.4 102 91.5 102C97.6 102 102.5 97.1 102.5 91C102.5 84.9 97.6 80 91.5 80C89.7 80 88 80.4 86.5 81.1V43C86.5 34.7 79.8 28 71.5 28H72.5Z"
+      fill="url(#whiskBody)"
+    />
+    <path
+      d="M65.5 33C61.9 33 58.5 34.4 55.9 36.9C53.4 39.5 52 42.9 52 46.5C52 50.9 54 55 57.3 57.7L68.5 67C69.6 67.9 71.2 67.8 72.2 66.8C73.1 65.7 73 64.1 72 63.2L60.8 53.9C58.5 52 57.2 49.3 57.2 46.5C57.2 44.4 58 42.4 59.5 40.8C61 39.2 63 38.4 65.1 38.4C67.2 38.4 69.2 39.2 70.7 40.8C72.2 42.4 73 44.4 73 46.5V95.5C73 98.8 74.3 102 76.7 104.4C79.1 106.8 82.3 108.1 85.6 108.1C88.9 108.1 92.1 106.8 94.5 104.4C96.9 102 98.2 98.8 98.2 95.5C98.2 92.2 96.9 89 94.5 86.6C92.1 84.2 88.9 82.9 85.6 82.9C84.2 82.9 82.8 83.1 81.5 83.6V46.5C81.5 42.9 80.1 39.5 77.6 36.9C75 34.4 71.6 33 68 33H65.5Z"
+      fill="url(#whiskWires)"
+    />
+  </g>
+  <g>
+    <text x="140" y="70" font-size="34" font-family="'Poppins', 'Segoe UI', sans-serif" font-weight="600" fill="#0B4FB3">Syracuse</text>
+    <text x="140" y="105" font-size="34" font-family="'Poppins', 'Segoe UI', sans-serif" font-weight="600" fill="#0B4FB3">Bakers Expo</text>
+    <text x="140" y="132" font-size="24" font-family="'Poppins', 'Segoe UI', sans-serif" font-weight="500" letter-spacing="0.3em" fill="#F97316">2026</text>
+  </g>
+</svg>
