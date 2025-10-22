@@ -424,7 +424,7 @@ body {
 }
 
 .feature-list {
-  margin: 0;
+  margin: 0 0 1.5rem;
   padding: 0 0 0 1.2rem;
   display: grid;
   gap: 0.65rem;
