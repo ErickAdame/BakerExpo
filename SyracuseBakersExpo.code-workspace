@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "name": "Syracuse Bakers Expo",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.git": true,
+      "**/.DS_Store": true
+    },
+    "files.associations": {
+      "*.html": "html",
+      "*.css": "css",
+      "*.js": "javascript"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

@@ -1,8 +1,55 @@
 const actionLinks = document.querySelectorAll('.actions__link');
 const menuToggle = document.querySelector('.menu-toggle');
 const siteMenu = document.querySelector('.site-menu');
+const deepLinkAnchors = document.querySelectorAll('[data-app-scheme]');
 const modalMessage = "We're baking up something great here, come back soon";
 let lastTrigger = null;
+
+const isMobileDevice = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+const launchDeepLink = (appUrl, fallbackUrl) => {
+  const launchTime = Date.now();
+  const fallbackDelay = 850;
+  let fallbackTimer;
+
+  const cleanup = () => {
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+    window.removeEventListener('pagehide', cleanup);
+    if (fallbackTimer) {
+      clearTimeout(fallbackTimer);
+    }
+  };
+
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      cleanup();
+    }
+  };
+
+  fallbackTimer = setTimeout(() => {
+    if (Date.now() - launchTime < fallbackDelay + 200) {
+      window.location.href = fallbackUrl;
+    }
+    cleanup();
+  }, fallbackDelay);
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  window.addEventListener('pagehide', cleanup, { once: true });
+
+  window.location.href = appUrl;
+};
+
+deepLinkAnchors.forEach((anchor) => {
+  anchor.addEventListener('click', (event) => {
+    const appScheme = anchor.dataset.appScheme;
+    if (!appScheme || !isMobileDevice()) {
+      return;
+    }
+
+    event.preventDefault();
+    launchDeepLink(appScheme, anchor.href);
+  });
+});
 
 const closeMenu = () => {
   if (!menuToggle || !siteMenu) return;
