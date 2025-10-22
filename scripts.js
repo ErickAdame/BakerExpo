@@ -2,8 +2,13 @@ const actionLinks = document.querySelectorAll('.actions__link');
 const menuToggle = document.querySelector('.menu-toggle');
 const siteMenu = document.querySelector('.site-menu');
 const deepLinkAnchors = document.querySelectorAll('[data-app-scheme]');
+const galleryGrid = document.querySelector('[data-gallery]');
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImage = document.querySelector('[data-lightbox-image]');
+const lightboxCloseButton = document.querySelector('[data-lightbox-close]');
 const modalMessage = "We're baking of something great here, check back soon!";
 let lastTrigger = null;
+let lastFocusedElement = null;
 
 const isMobileDevice = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -137,10 +142,62 @@ modal?.addEventListener('click', (event) => {
   }
 });
 
+const openLightbox = (imageElement) => {
+  if (!lightbox || !lightboxImage) return;
+  lightboxImage.src = imageElement.src;
+  lightboxImage.alt = imageElement.alt ?? '';
+  lightbox.classList.add('lightbox--open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  lastFocusedElement = document.activeElement;
+  lightboxCloseButton?.focus();
+  document.body.style.overflow = 'hidden';
+};
+
+const closeLightbox = () => {
+  if (!lightbox || !lightboxImage) return;
+  lightbox.classList.remove('lightbox--open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImage.src = '';
+  lightboxImage.alt = '';
+  document.body.style.overflow = '';
+  if (lastFocusedElement instanceof HTMLElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+};
+
+galleryGrid?.addEventListener('click', (event) => {
+  const target = event.target;
+  if (target instanceof HTMLImageElement) {
+    openLightbox(target);
+  }
+});
+
+galleryGrid?.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    const target = event.target;
+    if (target instanceof HTMLImageElement) {
+      event.preventDefault();
+      openLightbox(target);
+    }
+  }
+});
+
+lightboxCloseButton?.addEventListener('click', closeLightbox);
+
+lightbox?.addEventListener('click', (event) => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     if (modal?.classList.contains('modal--visible')) {
       hideModal();
+    }
+    if (lightbox?.classList.contains('lightbox--open')) {
+      closeLightbox();
     }
     if (menuToggle?.getAttribute('aria-expanded') === 'true') {
       closeMenu();

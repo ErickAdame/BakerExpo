@@ -84,12 +84,13 @@
 
         <section class="content-section content-section--gallery" aria-labelledby="gallery-heading">
           <h2 class="content-section__title" id="gallery-heading">Gallery Highlights</h2>
-          <div class="gallery-grid">
+          <div class="gallery-grid" data-gallery>
             <figure class="gallery-grid__item">
               <img
                 src="assets/photos/baker1.png"
                 alt="Artisan baker dusting powdered sugar over fresh pastries at the Syracuse Bakers Expo"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -97,6 +98,7 @@
                 src="assets/photos/baker2.png"
                 alt="Decorated cake with colorful icing flowers on display at the Expo"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -104,6 +106,7 @@
                 src="assets/photos/baker3.png"
                 alt="Expo attendees sampling desserts from a local Syracuse bakery booth"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -111,6 +114,7 @@
                 src="assets/photos/baker4.png"
                 alt="Closeup of gourmet cupcakes topped with fruit at the Syracuse Bakers Expo"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -118,6 +122,7 @@
                 src="assets/photos/baker5.png"
                 alt="Baker presenting freshly baked bread loaves to guests"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -125,6 +130,7 @@
                 src="assets/photos/baker6.png"
                 alt="Cooking demonstration with chef and audience at the Expo"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -132,6 +138,7 @@
                 src="assets/photos/baker7.png"
                 alt="Assorted truffles and chocolates arranged on a tray at the event"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
             <figure class="gallery-grid__item">
@@ -139,11 +146,27 @@
                 src="assets/photos/baker8.png"
                 alt="Smiling vendor serving attendees at the Syracuse Bakers Expo"
                 loading="lazy"
+                tabindex="0"
               />
             </figure>
           </div>
         </section>
       </main>
+      <div
+        class="lightbox"
+        data-lightbox
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Expanded gallery image"
+      >
+        <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close image">
+          &times;
+        </button>
+        <figure class="lightbox__figure">
+          <img class="lightbox__image" src="" alt="" data-lightbox-image />
+        </figure>
+      </div>
       <footer class="page__footer">
         <p>&copy; 2026 Syracuse Bakers Expo</p>
         <p class="page__footer-note">
