@@ -8,6 +8,27 @@
   </head>
   <body>
     <div class="page">
+      <div class="site-menu-wrapper">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-menu"
+        >
+          <span class="sr-only">Toggle navigation menu</span>
+          <img
+            class="menu-toggle__icon"
+            src="assets/images/baker_button.png"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+        </button>
+        <nav class="site-menu" id="site-menu" aria-label="Main menu" aria-hidden="true">
+          <a class="site-menu__link" href="about.html">About Us</a>
+          <a class="site-menu__link" href="index.html" aria-current="page">Home</a>
+        </nav>
+      </div>
       <header class="page__header">
         <div class="page__logo">
           <img

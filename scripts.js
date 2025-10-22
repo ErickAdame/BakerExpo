@@ -1,6 +1,46 @@
 const actionLinks = document.querySelectorAll('.actions__link');
+const menuToggle = document.querySelector('.menu-toggle');
+const siteMenu = document.querySelector('.site-menu');
 const modalMessage = "We're baking up something great here, come back soon";
 let lastTrigger = null;
+
+const closeMenu = () => {
+  if (!menuToggle || !siteMenu) return;
+  menuToggle.setAttribute('aria-expanded', 'false');
+  siteMenu.classList.remove('site-menu--open');
+  siteMenu.setAttribute('aria-hidden', 'true');
+};
+
+const openMenu = () => {
+  if (!menuToggle || !siteMenu) return;
+  menuToggle.setAttribute('aria-expanded', 'true');
+  siteMenu.classList.add('site-menu--open');
+  siteMenu.setAttribute('aria-hidden', 'false');
+  const firstLink = siteMenu.querySelector('a');
+  firstLink?.focus();
+};
+
+menuToggle?.addEventListener('click', () => {
+  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  if (isExpanded) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!menuToggle || !siteMenu) return;
+  const target = event.target;
+  if (
+    menuToggle.getAttribute('aria-expanded') === 'true' &&
+    target instanceof Node &&
+    !siteMenu.contains(target) &&
+    !menuToggle.contains(target)
+  ) {
+    closeMenu();
+  }
+});
 
 const modalMarkup = `
   <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="placeholder-modal-message">
@@ -42,8 +82,14 @@ modal?.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && modal?.classList.contains('modal--visible')) {
-    hideModal();
+  if (event.key === 'Escape') {
+    if (modal?.classList.contains('modal--visible')) {
+      hideModal();
+    }
+    if (menuToggle?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      menuToggle.focus();
+    }
   }
 });
 
