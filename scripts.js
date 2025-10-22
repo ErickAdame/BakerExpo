@@ -2,7 +2,7 @@ const actionLinks = document.querySelectorAll('.actions__link');
 const menuToggle = document.querySelector('.menu-toggle');
 const siteMenu = document.querySelector('.site-menu');
 const deepLinkAnchors = document.querySelectorAll('[data-app-scheme]');
-const modalMessage = "We're baking up something great here, come back soon";
+const modalMessage = "We're baking of something great here, check back soon!";
 let lastTrigger = null;
 
 const isMobileDevice = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -89,6 +89,15 @@ document.addEventListener('click', (event) => {
   }
 });
 
+siteMenu?.addEventListener('click', (event) => {
+  const target = event.target;
+  const anchor =
+    target instanceof HTMLElement ? target.closest('a.site-menu__link') : null;
+  if (anchor) {
+    closeMenu();
+  }
+});
+
 const modalMarkup = `
   <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="placeholder-modal-message">
     <div class="modal__dialog">
@@ -147,10 +156,17 @@ actionLinks.forEach((link) => {
 
     console.info(`Action clicked: ${label}`);
 
-    if (target instanceof HTMLAnchorElement && target.getAttribute('href')?.startsWith('#')) {
-      event.preventDefault();
-      lastTrigger = target;
-      showModal();
+    if (target instanceof HTMLAnchorElement) {
+      const href = target.getAttribute('href') ?? '';
+      if (href.startsWith('#')) {
+        const destination = document.querySelector(href);
+        if (destination) {
+          return;
+        }
+        event.preventDefault();
+        lastTrigger = target;
+        showModal();
+      }
     }
   });
 });
