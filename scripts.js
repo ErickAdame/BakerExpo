@@ -6,7 +6,7 @@ const galleryGrid = document.querySelector('[data-gallery]');
 const lightbox = document.querySelector('[data-lightbox]');
 const lightboxImage = document.querySelector('[data-lightbox-image]');
 const lightboxCloseButton = document.querySelector('[data-lightbox-close]');
-const modalMessage = "We're baking of something great here, check back soon!";
+const defaultModalMessage = "We're baking up something great here, stay tuned.";
 let lastTrigger = null;
 let lastFocusedElement = null;
 
@@ -106,7 +106,7 @@ siteMenu?.addEventListener('click', (event) => {
 const modalMarkup = `
   <div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="placeholder-modal-message">
     <div class="modal__dialog">
-      <p class="modal__message" id="placeholder-modal-message">${modalMessage}</p>
+      <p class="modal__message" id="placeholder-modal-message">${defaultModalMessage}</p>
       <button type="button" class="modal__close" aria-label="Close message">Got it</button>
     </div>
   </div>
@@ -116,6 +116,7 @@ document.body.insertAdjacentHTML('beforeend', modalMarkup);
 
 const modal = document.querySelector('.modal');
 const modalCloseButton = modal?.querySelector('.modal__close');
+const modalMessageElement = modal?.querySelector('.modal__message');
 
 const hideModal = () => {
   if (!modal) return;
@@ -127,8 +128,11 @@ const hideModal = () => {
   }
 };
 
-const showModal = () => {
+const showModal = (message = defaultModalMessage) => {
   if (!modal || !modalCloseButton) return;
+  if (modalMessageElement) {
+    modalMessageElement.textContent = message;
+  }
   modal.classList.add('modal--visible');
   modal.setAttribute('aria-hidden', 'false');
   modalCloseButton.focus();
@@ -140,6 +144,19 @@ modal?.addEventListener('click', (event) => {
   if (event.target === modal) {
     hideModal();
   }
+});
+
+const modalMessageTriggers = document.querySelectorAll('[data-modal-message]');
+
+modalMessageTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', (event) => {
+    if (trigger instanceof HTMLAnchorElement) {
+      event.preventDefault();
+    }
+    lastTrigger = trigger;
+    const message = trigger.getAttribute('data-modal-message') ?? defaultModalMessage;
+    showModal(message);
+  });
 });
 
 const openLightbox = (imageElement) => {
