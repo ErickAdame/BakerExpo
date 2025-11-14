@@ -8,8 +8,13 @@
       name="description"
       content="Experience the Syracuse Bakers Expo 2026 on March 26 at the Marriott Syracuse Downtown with Central New York bakers, tastings, demos, and community connections."
     />
+    <meta
+      name="keywords"
+      content="Syracuse Bakers Expo,Syracuse Baker Expo,Syracuse baking event,Central New York bakers,kids baking expo"
+    />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://www.syracusebakerexpo.com/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Syracuse Bakers Expo 2026" />
     <meta
@@ -30,8 +35,34 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Syracuse Bakers Expo",
+        "alternateName": [
+          "Syracuse Baker Expo",
+          "Syracuse Bakers Expo 2026"
+        ],
+        "url": "https://www.syracusebakerexpo.com/",
+        "logo": "https://www.syracusebakerexpo.com/assets/images/2026.png",
+        "description": "The Syracuse Bakers Expo is a Central New York celebration of bakers, culinary creatives, and kids baking showcases.",
+        "sameAs": [
+          "https://www.facebook.com/SyracuseBakersExpo/",
+          "https://www.instagram.com/syrbakers_expo/"
+        ],
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Syracuse, New York"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "Event",
         "name": "Syracuse Bakers Expo 2026",
+        "alternateName": [
+          "Syracuse Baker Expo",
+          "Syracuse Bakers Expo"
+        ],
         "description": "Celebrate Central New York bakers, tastings, and community connections at the Syracuse Bakers Expo 2026.",
         "startDate": "2026-03-26T17:30:00-04:00",
         "endDate": "2026-03-26T21:00:00-04:00",
@@ -41,6 +72,12 @@
         "image": [
           "https://www.syracusebakerexpo.com/assets/images/banner.png",
           "https://www.syracusebakerexpo.com/assets/images/2026.png"
+        ],
+        "keywords": [
+          "Syracuse Bakers Expo",
+          "Syracuse Baker Expo",
+          "Central New York baking expo",
+          "kids baking competition"
         ],
         "location": {
           "@type": "Place",
@@ -118,6 +155,7 @@
         <nav class="site-menu" id="site-menu" aria-label="Main menu" aria-hidden="true">
           <a class="site-menu__link" href="about.html">About Us</a>
           <a class="site-menu__link" href="gallery.html">Gallery</a>
+          <a class="site-menu__link" href="past-sponsors.html">Past Sponsors</a>
           <a
             class="site-menu__link"
             href="assets/documents/vendor_package_2026.pdf"
@@ -292,6 +330,20 @@
           <p>
             The support we receive from our community partners powers this incredible expo and helps us uplift Central New York’s talented baking entrepreneurs. Your generosity provides free and discounted tickets, covers vendor fees for bakers in need, and expands marketing opportunities — ensuring that every baker has the chance to shine!
           </p>
+          <div class="sponsor-spotlight">
+            <article class="sponsor-spotlight__card">
+              <h3>Arts &amp; Culture Champions</h3>
+              <p>Creative partners celebrate Syracuse makers and elevate culinary storytelling across Central New York.</p>
+            </article>
+            <article class="sponsor-spotlight__card">
+              <h3>Community Collaborators</h3>
+              <p>Local organizations help underwrite tickets, travel, and booth fees so every baker can participate.</p>
+            </article>
+            <article class="sponsor-spotlight__card">
+              <h3>Youth &amp; Family Advocates</h3>
+              <p>Supporters champion kids' baking labs, mentorship, and workforce pathways tied to food entrepreneurship.</p>
+            </article>
+          </div>
           <ul class="feature-list">
             <li>Brand visibility across event signage, digital channels, and media outreach</li>
             <li>Booth opportunities to connect your brand to local businesses, new and established</li>
@@ -306,6 +358,9 @@
             >
               Download Sponsorship Kit (PDF)
             </a>
+            <a class="resource-button" href="past-sponsors.html">
+              View Past Sponsors
+            </a>
             <button
               type="button"
               class="resource-button"
@@ -314,6 +369,18 @@
               Meet Our Sponsors
             </button>
           </div>
+        </section>
+
+        <section id="kids-showcase" class="content-section" aria-labelledby="kids-showcase-heading">
+          <h2 class="content-section__title" id="kids-showcase-heading">Kids Baking Creators Lab</h2>
+          <p class="content-section__lede">
+            Young pastry pros from Syracuse schools and youth programs present cupcakes, breads, and edible art that steal the show.
+          </p>
+          <ul class="feature-list">
+            <li>Hands-on decorating stations and bake-off demos led by local chefs</li>
+            <li>Spotlights on student makers supported by grants, scholarships, and neighborhood kitchens</li>
+            <li>Family voting for a People's Choice ribbon that encourages every kid to keep experimenting</li>
+          </ul>
         </section>
 
         <section id="plan-your-visit" class="content-section" aria-labelledby="visit-heading">
