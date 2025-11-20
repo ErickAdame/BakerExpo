@@ -112,18 +112,22 @@
         margin: 0 0 10px;
         text-align: center;
       }
-      .sprinkle-strip {
-        padding: 6px 0 0;
-      }
-      .sprinkle-strip img {
-        width: 48px;
-        height: auto;
-        margin: 0 6px 6px;
-      }
       .sprinkle-bg {
         background-image: url("https://www.syracusebakerexpo.com/assets/decor/sprinkles.png");
-        background-size: 180px;
+        background-size: 130px;
         background-repeat: repeat;
+        background-position: center;
+        background-color: #fff7fb;
+      }
+      .heading-pill {
+        display: inline-block;
+        background-color: #ffffff;
+        color: #241730;
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: 800;
+        font-size: 20px;
+        text-transform: uppercase;
       }
       .quote-box {
         background-color: #ff6bc3;
@@ -134,15 +138,37 @@
         font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
         font-size: 20px;
       }
-      .cupcake-inline {
+      .heading-pill--cta {
+        color: #1e1e1e;
+        font-size: 24px;
+        text-transform: none;
+      }
+      .cta-note {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 10px 16px;
+        border-radius: 18px;
         display: inline-block;
-        vertical-align: middle;
-        margin-left: 8px;
+        font-size: 16px;
+        margin-top: 10px;
       }
       .color-card {
         border-radius: 22px;
         padding: 18px 20px 20px;
         color: #ffffff;
+      }
+      .photo-frame {
+        border-radius: 22px;
+        padding: 6px;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: inline-block;
+      }
+      .photo-frame img {
+        width: 170px;
+        height: 170px;
+        border-radius: 18px;
+        display: block;
+        object-fit: cover;
       }
       @media only screen and (max-width: 620px) {
         .container {
@@ -203,22 +229,29 @@
                       <td class="mobile-center">
                         <p class="headline">
                           Your support uplifts bakers, inspires youth, and strengthens Syracuse.
-                          <img
-                            class="cupcake-inline"
-                            src="https://www.syracusebakerexpo.com/assets/decor/cupcake.png"
-                            alt=""
-                            width="80"
-                            height="80"
-                            role="presentation"
-                          />
                         </p>
                       </td>
                     </tr>
                     <tr>
                       <td class="mobile-center" style="padding: 16px 0 6px;">
-                        <a class="cta-btn" href="https://www.syracusebakerexpo.com/assets/documents/sponsorship_package.pdf" target="_blank" rel="noopener noreferrer">
-                          View Sponsorship Kit
-                        </a>
+                        <table role="presentation" align="center">
+                          <tr>
+                            <td style="padding-right: 12px;">
+                              <img
+                                src="https://www.syracusebakerexpo.com/assets/decor/cupcake.png"
+                                alt=""
+                                width="70"
+                                height="70"
+                                role="presentation"
+                              />
+                            </td>
+                            <td>
+                              <a class="cta-btn" href="https://www.syracusebakerexpo.com/assets/documents/sponsorship_package.pdf" target="_blank" rel="noopener noreferrer">
+                                View Sponsorship Kit
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                     <tr>
@@ -229,14 +262,6 @@
                       </td>
                     </tr>
                   </table>
-                </td>
-              </tr>
-              <tr>
-                <td class="sprinkle-strip" align="center">
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
                 </td>
               </tr>
               <tr>
@@ -318,16 +343,18 @@
               <tr>
                 <td style="padding: 20px 38px 0;">
                   <div class="quote-box">
-                    &ldquo;Together, we can make Central New York a little bit sweeter.&rdquo;
+                    "Together, we can make Central New York a little bit sweeter."
                   </div>
                 </td>
               </tr>
               <tr>
                 <td style="padding: 32px 30px 0;">
-                  <table class="sprinkle-bg" role="presentation" width="100%" style="border-radius: 28px; border: 1px dashed #f5b9ff; padding: 20px; background-color: #fff5fb;">
+                  <table class="sprinkle-bg" role="presentation" width="100%" style="border-radius: 28px; border: 1px dashed #f5b9ff; padding: 20px;">
                     <tr>
                       <td class="mobile-center" style="padding-bottom: 12px;">
-                        <h2 class="section-title" style="margin: 0;">Community In Focus</h2>
+                        <h2 class="section-title" style="margin: 0;">
+                          <span class="heading-pill">Community In Focus</span>
+                        </h2>
                         <p class="body-copy" style="margin: 8px 0 2px;">
                           Bakers of every age step onto a professional stage, share their craft, and fuel Syracuse's creativity.
                         </p>
@@ -337,29 +364,29 @@
                       <td>
                         <table role="presentation" width="100%">
                           <tr>
-                            <td class="stack" width="33.33%" style="padding: 0 6px 12px;">
-                              <img
-                                src="https://www.syracusebakerexpo.com/assets/photos/baker3.png"
-                                alt="Youth baker presenting cake at Syracuse Bakers Expo"
-                                width="100%"
-                                style="border-radius: 22px;"
-                              />
+                            <td class="stack" width="33.33%" style="padding: 0 6px 12px;" align="center">
+                              <span class="photo-frame">
+                                <img
+                                  src="https://www.syracusebakerexpo.com/assets/photos/baker3.png"
+                                  alt="Youth baker presenting cake at Syracuse Bakers Expo"
+                                />
+                              </span>
                             </td>
-                            <td class="stack" width="33.33%" style="padding: 0 6px 12px;">
-                              <img
-                                src="https://www.syracusebakerexpo.com/assets/photos/baker11.png"
-                                alt="Teen participant showcasing treats at Bakers Expo"
-                                width="100%"
-                                style="border-radius: 22px;"
-                              />
+                            <td class="stack" width="33.33%" style="padding: 0 6px 12px;" align="center">
+                              <span class="photo-frame">
+                                <img
+                                  src="https://www.syracusebakerexpo.com/assets/photos/baker11.png"
+                                  alt="Teen participant showcasing treats at Bakers Expo"
+                                />
+                              </span>
                             </td>
-                            <td class="stack" width="33.33%" style="padding: 0 6px 12px;">
-                              <img
-                                src="https://www.syracusebakerexpo.com/assets/photos/email_photo.png"
-                                alt="Student proudly holding custom desserts from the Expo"
-                                width="100%"
-                                style="border-radius: 22px;"
-                              />
+                            <td class="stack" width="33.33%" style="padding: 0 6px 12px;" align="center">
+                              <span class="photo-frame">
+                                <img
+                                  src="https://www.syracusebakerexpo.com/assets/photos/baker10.png"
+                                  alt="Student proudly holding custom desserts from the Expo"
+                                />
+                              </span>
                             </td>
                           </tr>
                         </table>
@@ -369,18 +396,13 @@
                 </td>
               </tr>
               <tr>
-                <td class="sprinkle-strip" align="center" style="padding-bottom: 12px;">
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                </td>
-              </tr>
-              <tr>
                 <td style="padding: 32px 24px 0;">
                   <table role="presentation" width="100%">
                     <tr>
                       <td class="mobile-center" style="padding: 0 12px 20px;">
-                        <h2 class="section-title" style="margin: 0;">Sponsorship Opportunities</h2>
+                        <h2 class="section-title" style="margin: 0;">
+                          <span class="heading-pill">Sponsorship Opportunities</span>
+                        </h2>
                         <p class="body-copy" style="margin: 10px 0 0;">
                           Each package can be customized to meet your marketing goals and community impact commitments.
                         </p>
@@ -472,7 +494,7 @@
                           <tr>
                             <td align="center" style="border-radius: 999px;" bgcolor="#ffffff">
                               <a
-                                href="mailto:sponsorships@syracusebakerexpo.com?subject=Syracuse%20Bakers%20Expo%202026%20Sponsorship"
+                                href="mailto:info@crossculturalstrategy.com?subject=Syracuse%20Bakers%20Expo%202026%20Sponsorship"
                                 class="cta-btn"
                                 style="background-color: #ffffff; color: #4c55ff;"
                               >
@@ -503,14 +525,6 @@
                       </td>
                     </tr>
                   </table>
-                </td>
-              </tr>
-              <tr>
-                <td class="sprinkle-strip" align="center" style="padding-bottom: 24px;">
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
-                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
                 </td>
               </tr>
             </table>
