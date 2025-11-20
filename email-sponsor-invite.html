@@ -170,6 +170,27 @@
         display: block;
         object-fit: cover;
       }
+      .section-banner {
+        background-color: #7954ff;
+        color: #ffffff;
+        border-radius: 22px;
+        text-align: center;
+        padding: 18px 26px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .section-banner__title {
+        font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 8px;
+      }
+      .section-banner__text {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+      }
       @media only screen and (max-width: 620px) {
         .container {
           width: 100% !important;
@@ -194,7 +215,7 @@
           <td align="center">
             <table class="container" role="presentation" style="background-color: #ffffff; margin: 32px auto 40px; border-radius: 32px; border: 1px solid #f6d9ff;">
               <tr>
-                <td>
+                <td align="center">
                   <img
                     src="https://www.syracusebakerexpo.com/assets/decor/frosting.png"
                     alt=""
@@ -268,11 +289,7 @@
                 <td style="padding: 0 36px 0;">
                   <table class="sprinkle-bg" role="presentation" width="100%" style="background-color: #f6efff; border-radius: 24px; padding: 24px;">
                     <tr>
-                      <td class="mobile-center" style="padding-bottom: 16px; text-align: center;">
-                        <h2 class="section-title" style="margin: 0; font-weight: 800; text-transform: uppercase;">
-                          Event Snapshot
-                        </h2>
-                      </td>
+                      <td style="height: 20px; font-size: 0; line-height: 0;">&nbsp;</td>
                     </tr>
                     <tr>
                       <td>
@@ -316,7 +333,7 @@
                       <td class="pill">
                         <table role="presentation" width="100%">
                           <tr>
-                            <td class="color-card stack" width="50%" style="background-color: #ff7dda; margin-bottom: 12px;">
+                            <td class="color-card stack" width="50%" style="background-color: #ff7dda; margin-bottom: 12px; vertical-align: top;">
                               <p class="section-title" style="font-size: 22px; color: #ffffff; margin-bottom: 8px;">
                                 Our Commitment to Local Talent
                               </p>
@@ -325,7 +342,7 @@
                               </p>
                             </td>
                             <td class="stack" width="20" style="font-size: 0; line-height: 0;">&nbsp;</td>
-                            <td class="color-card stack" width="50%" style="background-color: #7466ff; margin-bottom: 12px;">
+                            <td class="color-card stack" width="50%" style="background-color: #7466ff; margin-bottom: 12px; vertical-align: top;">
                               <p class="section-title" style="font-size: 22px; color: #ffffff; margin-bottom: 8px;">
                                 Why We Do What We Do
                               </p>
@@ -351,13 +368,13 @@
                 <td style="padding: 32px 30px 0;">
                   <table class="sprinkle-bg" role="presentation" width="100%" style="border-radius: 28px; border: 1px dashed #f5b9ff; padding: 20px;">
                     <tr>
-                      <td class="mobile-center" style="padding-bottom: 12px;">
-                        <h2 class="section-title" style="margin: 0;">
-                          <span class="heading-pill">Community In Focus</span>
-                        </h2>
-                        <p class="body-copy" style="margin: 8px 0 2px;">
-                          Bakers of every age step onto a professional stage, share their craft, and fuel Syracuse's creativity.
-                        </p>
+                      <td style="padding-bottom: 12px;">
+                        <div class="section-banner">
+                          <p class="section-banner__title">Community In Focus</p>
+                          <p class="section-banner__text">
+                            Bakers of every age step onto a professional stage, share their craft, and fuel Syracuse's creativity.
+                          </p>
+                        </div>
                       </td>
                     </tr>
                     <tr>
@@ -393,6 +410,17 @@
                       </td>
                     </tr>
                   </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <img
+                    src="https://www.syracusebakerexpo.com/assets/decor/frosting.png"
+                    alt=""
+                    width="100%"
+                    style="max-width: 600px; height: auto;"
+                    role="presentation"
+                  />
                 </td>
               </tr>
               <tr>
@@ -481,15 +509,12 @@
               </tr>
               <tr>
                 <td style="padding: 32px 36px;">
+                  <p class="headline" style="text-align: center; margin: 0 0 18px;">
+                    <span class="heading-pill heading-pill--cta">Become a sponsor and help us bake a future together.</span>
+                  </p>
                   <table class="sprinkle-bg" role="presentation" width="100%" style="background-color: #4c55ff; border-radius: 24px;">
                     <tr>
                       <td style="padding: 28px 32px; text-align: center;">
-                        <p class="headline" style="color: #ffffff; font-size: 26px;">
-                          Become a sponsor and help us bake a future together.
-                        </p>
-                        <p class="body-copy" style="color: #e2dbff; margin: 8px 0 18px;">
-                          Reserve your package or ask about custom activations by contacting our sponsorship team.
-                        </p>
                         <table role="presentation" align="center">
                           <tr>
                             <td align="center" style="border-radius: 999px;" bgcolor="#ffffff">
@@ -503,9 +528,6 @@
                             </td>
                           </tr>
                         </table>
-                        <p class="body-copy" style="color: #ffffff; font-size: 14px; margin-top: 18px;">
-                          Need a custom deliverable? We can build tasting lounges, branded demos, scholarships, or youth labs that align with your goals.
-                        </p>
                       </td>
                     </tr>
                   </table>
@@ -520,7 +542,7 @@
                           Syracuse Bakers Expo | InterFaith Works of CNY x Trita Treatz LLC x Cross Cultural Strategies LLC
                         </p>
                         <p class="body-copy" style="font-size: 13px; color: #b09ec7; margin: 8px 0 0;">
-                          Follow along @syrbakers_expo • #SyracuseBakersExpo
+                          Visit our website www.syracusebakerexpo.com
                         </p>
                       </td>
                     </tr>
