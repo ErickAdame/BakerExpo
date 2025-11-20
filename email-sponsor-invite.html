@@ -35,7 +35,8 @@
       .headline {
         font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
         color: #ed4bc5;
-        font-size: 28px;
+        font-size: 30px;
+        font-weight: 700;
         line-height: 1.3;
         margin: 0;
       }
@@ -57,7 +58,7 @@
         background-color: #4c55ff;
         color: #ffffff;
         font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
-        font-size: 17px;
+        font-size: 18px;
         font-weight: bold;
         padding: 14px 32px;
         border-radius: 999px;
@@ -102,6 +103,47 @@
         padding: 18px;
         border: 1px solid #f0d8ff;
       }
+      .prelude {
+        font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
+        color: #4c55ff;
+        font-size: 15px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+        text-align: center;
+      }
+      .sprinkle-strip {
+        padding: 6px 0 0;
+      }
+      .sprinkle-strip img {
+        width: 48px;
+        height: auto;
+        margin: 0 6px 6px;
+      }
+      .sprinkle-bg {
+        background-image: url("https://www.syracusebakerexpo.com/assets/decor/sprinkles.png");
+        background-size: 180px;
+        background-repeat: repeat;
+      }
+      .quote-box {
+        background-color: #ff6bc3;
+        color: #ffffff;
+        border-radius: 24px;
+        padding: 20px 24px;
+        text-align: center;
+        font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
+        font-size: 20px;
+      }
+      .cupcake-inline {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+      .color-card {
+        border-radius: 22px;
+        padding: 18px 20px 20px;
+        color: #ffffff;
+      }
       @media only screen and (max-width: 620px) {
         .container {
           width: 100% !important;
@@ -140,13 +182,20 @@
                 <td style="padding: 32px 36px 0;">
                   <table role="presentation" width="100%">
                     <tr>
+                      <td>
+                        <p class="prelude">
+                          InterFaith Works of CNY, in collaboraTIon with Trita Treatz, LLC, and Cross Cultural Strategies LLC, is proud to present the Third Annual...
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
                       <td class="mobile-center">
                         <img
                           src="https://www.syracusebakerexpo.com/assets/images/2026.png"
                           alt="Syracuse Bakers Expo 2026 logo"
-                          width="120"
-                          height="120"
-                          style="margin: 0 auto 12px;"
+                          width="190"
+                          height="190"
+                          style="margin: 0 auto 12px; width: 190px; height: auto;"
                         />
                       </td>
                     </tr>
@@ -154,6 +203,14 @@
                       <td class="mobile-center">
                         <p class="headline">
                           Your support uplifts bakers, inspires youth, and strengthens Syracuse.
+                          <img
+                            class="cupcake-inline"
+                            src="https://www.syracusebakerexpo.com/assets/decor/cupcake.png"
+                            alt=""
+                            width="80"
+                            height="80"
+                            role="presentation"
+                          />
                         </p>
                       </td>
                     </tr>
@@ -162,16 +219,6 @@
                         <a class="cta-btn" href="https://www.syracusebakerexpo.com/assets/documents/sponsorship_package.pdf" target="_blank" rel="noopener noreferrer">
                           View Sponsorship Kit
                         </a>
-                        <div style="padding-top: 8px;">
-                          <img
-                            src="https://www.syracusebakerexpo.com/assets/decor/cupcake.png"
-                            alt=""
-                            width="48"
-                            height="48"
-                            role="presentation"
-                            style="display: inline-block;"
-                          />
-                        </div>
                       </td>
                     </tr>
                     <tr>
@@ -185,16 +232,26 @@
                 </td>
               </tr>
               <tr>
+                <td class="sprinkle-strip" align="center">
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                </td>
+              </tr>
+              <tr>
                 <td style="padding: 0 36px 0;">
-                  <table role="presentation" width="100%" style="background-color: #f6efff; border-radius: 24px; padding: 24px;">
+                  <table class="sprinkle-bg" role="presentation" width="100%" style="background-color: #f6efff; border-radius: 24px; padding: 24px;">
                     <tr>
-                      <td class="mobile-center" style="padding-bottom: 16px;">
-                        <h2 class="section-title" style="margin: 0;">Event Snapshot</h2>
+                      <td class="mobile-center" style="padding-bottom: 16px; text-align: center;">
+                        <h2 class="section-title" style="margin: 0; font-weight: 800; text-transform: uppercase;">
+                          Event Snapshot
+                        </h2>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <table role="presentation" width="100%">
+                        <table class="sprinkle-bg" role="presentation" width="100%">
                           <tr>
                             <td class="event-col stack" width="50%" style="vertical-align: top;">
                               <p class="body-copy" style="font-weight: bold; margin-bottom: 10px;">
@@ -232,26 +289,42 @@
                   <table role="presentation" width="100%">
                     <tr>
                       <td class="pill">
-                        <p class="section-title" style="font-size: 20px; margin-bottom: 6px;">
-                          Our Commitment to Local Talent
-                        </p>
-                        <p class="body-copy" style="margin-bottom: 14px;">
-                          We uplift local talent and nurture the next generation of creators, especially the culinary arts, to inspire, heal, and connect Syracuse.
-                        </p>
-                        <p class="section-title" style="font-size: 20px; margin-bottom: 6px;">
-                          Why We Do What We Do
-                        </p>
-                        <p class="body-copy" style="margin: 0;">
-                          The Expo fills a gap left by the lack of access to affordable, visible platforms by offering bakers a professional stage and providing youth with structured, inspiring entry points into the culinary arts.
-                        </p>
+                        <table role="presentation" width="100%">
+                          <tr>
+                            <td class="color-card stack" width="50%" style="background-color: #ff7dda; margin-bottom: 12px;">
+                              <p class="section-title" style="font-size: 22px; color: #ffffff; margin-bottom: 8px;">
+                                Our Commitment to Local Talent
+                              </p>
+                              <p class="body-copy" style="color: #fffafc; margin: 0;">
+                                We uplift local talent and nurture the next generation of creators, especially the culinary arts, to inspire, heal, and connect Syracuse.
+                              </p>
+                            </td>
+                            <td class="stack" width="20" style="font-size: 0; line-height: 0;">&nbsp;</td>
+                            <td class="color-card stack" width="50%" style="background-color: #7466ff; margin-bottom: 12px;">
+                              <p class="section-title" style="font-size: 22px; color: #ffffff; margin-bottom: 8px;">
+                                Why We Do What We Do
+                              </p>
+                              <p class="body-copy" style="color: #f1eefe; margin: 0;">
+                                The Expo fills a gap left by the lack of access to affordable, visible platforms by offering bakers a professional stage and providing youth with structured, inspiring entry points into the culinary arts.
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                   </table>
                 </td>
               </tr>
               <tr>
+                <td style="padding: 20px 38px 0;">
+                  <div class="quote-box">
+                    &ldquo;Together, we can make Central New York a little bit sweeter.&rdquo;
+                  </div>
+                </td>
+              </tr>
+              <tr>
                 <td style="padding: 32px 30px 0;">
-                  <table role="presentation" width="100%" style="border-radius: 28px; border: 1px dashed #f5b9ff; padding: 20px;">
+                  <table class="sprinkle-bg" role="presentation" width="100%" style="border-radius: 28px; border: 1px dashed #f5b9ff; padding: 20px; background-color: #fff5fb;">
                     <tr>
                       <td class="mobile-center" style="padding-bottom: 12px;">
                         <h2 class="section-title" style="margin: 0;">Community In Focus</h2>
@@ -296,6 +369,13 @@
                 </td>
               </tr>
               <tr>
+                <td class="sprinkle-strip" align="center" style="padding-bottom: 12px;">
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                </td>
+              </tr>
+              <tr>
                 <td style="padding: 32px 24px 0;">
                   <table role="presentation" width="100%">
                     <tr>
@@ -310,7 +390,7 @@
                       <td>
                         <table role="presentation" width="100%">
                           <tr>
-                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top;">
+                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top; background-color: #ffe3f7;">
                               <p style="color: #ed4bc5; font-size: 16px; font-weight: bold; margin: 0 0 6px;">
                                 $7,500
                               </p>
@@ -326,7 +406,7 @@
                               </ul>
                             </td>
                             <td width="24" class="stack" style="font-size: 0; line-height: 0;">&nbsp;</td>
-                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top;">
+                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top; background-color: #ede6ff;">
                               <p style="color: #ed4bc5; font-size: 16px; font-weight: bold; margin: 0 0 6px;">
                                 $5,000
                               </p>
@@ -344,7 +424,7 @@
                             <td height="24" style="font-size: 0; line-height: 0;">&nbsp;</td>
                           </tr>
                           <tr>
-                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top;">
+                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top; background-color: #f0f7ff;">
                               <p style="color: #ed4bc5; font-size: 16px; font-weight: bold; margin: 0 0 6px;">
                                 $2,500
                               </p>
@@ -358,7 +438,7 @@
                               </ul>
                             </td>
                             <td width="24" class="stack" style="font-size: 0; line-height: 0;">&nbsp;</td>
-                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top;">
+                            <td class="sponsor-card sponsor-col stack" width="50%" style="vertical-align: top; background-color: #fff0fa;">
                               <p style="color: #ed4bc5; font-size: 16px; font-weight: bold; margin: 0 0 6px;">
                                 $1,000
                               </p>
@@ -379,7 +459,7 @@
               </tr>
               <tr>
                 <td style="padding: 32px 36px;">
-                  <table role="presentation" width="100%" style="background-color: #4c55ff; border-radius: 24px;">
+                  <table class="sprinkle-bg" role="presentation" width="100%" style="background-color: #4c55ff; border-radius: 24px;">
                     <tr>
                       <td style="padding: 28px 32px; text-align: center;">
                         <p class="headline" style="color: #ffffff; font-size: 26px;">
@@ -426,14 +506,11 @@
                 </td>
               </tr>
               <tr>
-                <td>
-                  <img
-                    src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png"
-                    alt=""
-                    width="100%"
-                    style="max-width: 600px; height: auto;"
-                    role="presentation"
-                  />
+                <td class="sprinkle-strip" align="center" style="padding-bottom: 24px;">
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
+                  <img src="https://www.syracusebakerexpo.com/assets/decor/sprinkles.png" alt="" role="presentation" />
                 </td>
               </tr>
             </table>
