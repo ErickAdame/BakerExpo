@@ -7,6 +7,9 @@ const lightbox = document.querySelector('[data-lightbox]');
 const lightboxImage = document.querySelector('[data-lightbox-image]');
 const lightboxCloseButton = document.querySelector('[data-lightbox-close]');
 const defaultModalMessage = "We're baking up something great here, stay tuned.";
+const isHomePage = Boolean(
+  document.querySelector('main[aria-label="Syracuse Bakers Expo information"]')
+);
 let lastTrigger = null;
 let lastFocusedElement = null;
 
@@ -44,17 +47,19 @@ const launchDeepLink = (appUrl, fallbackUrl) => {
   window.location.href = appUrl;
 };
 
-deepLinkAnchors.forEach((anchor) => {
-  anchor.addEventListener('click', (event) => {
-    const appScheme = anchor.dataset.appScheme;
-    if (!appScheme || !isMobileDevice()) {
-      return;
-    }
+if (!isHomePage) {
+  deepLinkAnchors.forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      const appScheme = anchor.dataset.appScheme;
+      if (!appScheme || !isMobileDevice()) {
+        return;
+      }
 
-    event.preventDefault();
-    launchDeepLink(appScheme, anchor.href);
+      event.preventDefault();
+      launchDeepLink(appScheme, anchor.href);
+    });
   });
-});
+}
 
 const closeMenu = () => {
   if (!menuToggle || !siteMenu) return;
@@ -244,3 +249,16 @@ actionLinks.forEach((link) => {
     }
   });
 });
+
+if (isHomePage) {
+  const allNavigationLinks = document.querySelectorAll('a[href]');
+
+  allNavigationLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      lastTrigger = link;
+      showModal(defaultModalMessage);
+      closeMenu();
+    });
+  });
+}
