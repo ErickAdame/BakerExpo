@@ -252,9 +252,20 @@ actionLinks.forEach((link) => {
 
 if (isHomePage) {
   const allNavigationLinks = document.querySelectorAll('a[href]');
+  const allowedMenuRoutes = new Set(['gallery.html', 'past-sponsors.html']);
 
   allNavigationLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href') ?? '';
+      const normalizedHref = href.split('#')[0].split('?')[0];
+      const isMainMenuLink = Boolean(link.closest('.site-menu'));
+      const allowNavigation = isMainMenuLink && allowedMenuRoutes.has(normalizedHref);
+
+      if (allowNavigation) {
+        closeMenu();
+        return;
+      }
+
       event.preventDefault();
       lastTrigger = link;
       showModal(defaultModalMessage);
